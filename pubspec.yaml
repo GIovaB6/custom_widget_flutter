@@ -2,6 +2,7 @@ name: custom_widget_flutter
 description: A custom_widget_flutter to make more easy and complete the common widget 
 version: 0.0.1
 homepage:
+repository: https://github.com/GIovaB6/custom_widget_flutter
 
 environment:
   sdk: '>=3.1.0 <4.0.0'
