@@ -4,7 +4,7 @@ import 'package:flutter/material.dart';
 
 class CustomFloatingEditText extends StatelessWidget {
   CustomFloatingEditText(
-      {this.shape,
+      {super.key, this.shape,
       this.padding,
       this.variant,
       this.fontStyle,

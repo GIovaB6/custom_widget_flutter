@@ -1,4 +1,3 @@
-import 'package:basic_utils_flutter/app_export.dart';
 import 'package:custom_widget_flutter/widgets/custom_image_view.dart';
 
 import 'package:flutter/material.dart';
