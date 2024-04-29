@@ -2,8 +2,9 @@ import 'package:basic_utils_flutter/app_export.dart';
 import 'package:flutter/material.dart';
 
 class CustomTextFormField extends StatelessWidget {
-  CustomTextFormField(
-      {super.key, this.shape,
+  const CustomTextFormField(
+      {super.key,
+      this.shape,
       this.padding,
       this.variant,
       this.fontStyle,
@@ -24,45 +25,45 @@ class CustomTextFormField extends StatelessWidget {
       this.suffixConstraints,
       this.validator});
 
-  TextFormFieldShape? shape;
+  final TextFormFieldShape? shape;
 
-  TextFormFieldPadding? padding;
+  final TextFormFieldPadding? padding;
 
-  TextFormFieldVariant? variant;
+  final TextFormFieldVariant? variant;
 
-  TextFormFieldFontStyle? fontStyle;
+  final TextFormFieldFontStyle? fontStyle;
 
-  Alignment? alignment;
+  final Alignment? alignment;
 
-  double? width;
+  final double? width;
 
-  EdgeInsetsGeometry? margin;
+  final EdgeInsetsGeometry? margin;
 
-  TextEditingController? controller;
+  final TextEditingController? controller;
 
-  FocusNode? focusNode;
+  final FocusNode? focusNode;
 
-  bool? autofocus;
+  final bool? autofocus;
 
-  bool? isObscureText;
+  final bool? isObscureText;
 
-  TextInputAction? textInputAction;
+  final TextInputAction? textInputAction;
 
-  TextInputType? textInputType;
+  final TextInputType? textInputType;
 
-  int? maxLines;
+  final int? maxLines;
 
-  String? hintText;
+  final String? hintText;
 
-  Widget? prefix;
+  final Widget? prefix;
 
-  BoxConstraints? prefixConstraints;
+  final BoxConstraints? prefixConstraints;
 
-  Widget? suffix;
+  final Widget? suffix;
 
-  BoxConstraints? suffixConstraints;
+  final BoxConstraints? suffixConstraints;
 
-  FormFieldValidator<String>? validator;
+  final FormFieldValidator<String>? validator;
 
   @override
   Widget build(BuildContext context) {
@@ -114,7 +115,7 @@ class CustomTextFormField extends StatelessWidget {
 
   _setFontStyle() {
     switch (fontStyle) {
-      case TextFormFieldFontStyle.SFProDisplayRegular17:
+      case TextFormFieldFontStyle.sFProDisplayRegular17:
         return TextStyle(
           color: ColorConstant.black90066,
           fontSize: getFontSize(
@@ -148,7 +149,7 @@ class CustomTextFormField extends StatelessWidget {
 
   _setBorderStyle() {
     switch (variant) {
-      case TextFormFieldVariant.OutlineGray500:
+      case TextFormFieldVariant.outlineGray500:
         return OutlineInputBorder(
           borderRadius: _setOutlineBorderRadius(),
           borderSide: BorderSide(
@@ -156,7 +157,7 @@ class CustomTextFormField extends StatelessWidget {
             width: 1,
           ),
         );
-      case TextFormFieldVariant.None:
+      case TextFormFieldVariant.none:
         return InputBorder.none;
       default:
         return OutlineInputBorder(
@@ -168,7 +169,7 @@ class CustomTextFormField extends StatelessWidget {
 
   _setFillColor() {
     switch (variant) {
-      case TextFormFieldVariant.OutlineGray500:
+      case TextFormFieldVariant.outlineGray500:
         return ColorConstant.whiteA700;
       default:
         return ColorConstant.gray30059;
@@ -177,9 +178,9 @@ class CustomTextFormField extends StatelessWidget {
 
   _setFilled() {
     switch (variant) {
-      case TextFormFieldVariant.OutlineGray500:
+      case TextFormFieldVariant.outlineGray500:
         return true;
-      case TextFormFieldVariant.None:
+      case TextFormFieldVariant.none:
         return false;
       default:
         return true;
@@ -188,11 +189,11 @@ class CustomTextFormField extends StatelessWidget {
 
   _setPadding() {
     switch (padding) {
-      case TextFormFieldPadding.PaddingAll13:
+      case TextFormFieldPadding.paddingAll13:
         return getPadding(
           all: 13,
         );
-      case TextFormFieldPadding.PaddingAll7:
+      case TextFormFieldPadding.paddingAll7:
         return getPadding(
           all: 7,
         );
@@ -207,22 +208,22 @@ class CustomTextFormField extends StatelessWidget {
 }
 
 enum TextFormFieldShape {
-  RoundedBorder4,
+  roundedBorder4,
 }
 
 enum TextFormFieldPadding {
-  PaddingT13,
-  PaddingAll13,
-  PaddingAll7,
+  paddingT13,
+  paddingAll13,
+  paddingAll7,
 }
 
 enum TextFormFieldVariant {
-  None,
-  FillGray30059,
-  OutlineGray500,
+  none,
+  fillGray30059,
+  outlineGray500,
 }
 
 enum TextFormFieldFontStyle {
-  SFProDisplayRegular16,
-  SFProDisplayRegular17,
+  sFProDisplayRegular16,
+  sFProDisplayRegular17,
 }

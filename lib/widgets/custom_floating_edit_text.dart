@@ -3,7 +3,7 @@ import 'package:basic_utils_flutter/app_export.dart';
 import 'package:flutter/material.dart';
 
 class CustomFloatingEditText extends StatelessWidget {
-  CustomFloatingEditText(
+  const CustomFloatingEditText(
       {super.key,
       this.shape,
       this.padding,
@@ -27,47 +27,47 @@ class CustomFloatingEditText extends StatelessWidget {
       this.suffixConstraints,
       this.validator});
 
-  FloatingEditTextShape? shape;
+  final FloatingEditTextShape? shape;
 
-  FloatingEditTextPadding? padding;
+  final FloatingEditTextPadding? padding;
 
-  FloatingEditTextVariant? variant;
+  final FloatingEditTextVariant? variant;
 
-  FloatingEditTextFontStyle? fontStyle;
+  final FloatingEditTextFontStyle? fontStyle;
 
-  Alignment? alignment;
+  final Alignment? alignment;
 
-  double? width;
+  final double? width;
 
-  EdgeInsetsGeometry? margin;
+  final EdgeInsetsGeometry? margin;
 
-  TextEditingController? controller;
+  final TextEditingController? controller;
 
-  FocusNode? focusNode;
+  final FocusNode? focusNode;
 
-  bool? autofocus;
+  final bool? autofocus;
 
-  bool? isObscureText;
+  final bool? isObscureText;
 
-  TextInputAction? textInputAction;
+  final TextInputAction? textInputAction;
 
-  TextInputType? textInputType;
+  final TextInputType? textInputType;
 
-  int? maxLines;
+  final int? maxLines;
 
-  String? labelText;
+  final String? labelText;
 
-  String? hintText;
+  final String? hintText;
 
-  Widget? prefix;
+  final Widget? prefix;
 
-  BoxConstraints? prefixConstraints;
+  final BoxConstraints? prefixConstraints;
 
-  Widget? suffix;
+  final Widget? suffix;
 
-  BoxConstraints? suffixConstraints;
+  final BoxConstraints? suffixConstraints;
 
-  FormFieldValidator<String>? validator;
+  final FormFieldValidator<String>? validator;
 
   @override
   Widget build(BuildContext context) {
@@ -121,7 +121,7 @@ class CustomFloatingEditText extends StatelessWidget {
 
   _setFontStyle() {
     switch (fontStyle) {
-      case FloatingEditTextFontStyle.SFProDisplayBold14:
+      case FloatingEditTextFontStyle.sFProDisplayBold14:
         return TextStyle(
           color: ColorConstant.blueGray400,
           fontSize: getFontSize(
@@ -155,7 +155,7 @@ class CustomFloatingEditText extends StatelessWidget {
 
   _setBorderStyle() {
     switch (variant) {
-      case FloatingEditTextVariant.None:
+      case FloatingEditTextVariant.none:
         return InputBorder.none;
       default:
         return OutlineInputBorder(
@@ -174,7 +174,7 @@ class CustomFloatingEditText extends StatelessWidget {
 
   _setFilled() {
     switch (variant) {
-      case FloatingEditTextVariant.None:
+      case FloatingEditTextVariant.none:
         return false;
       default:
         return true;
@@ -183,7 +183,7 @@ class CustomFloatingEditText extends StatelessWidget {
 
   _setPadding() {
     switch (padding) {
-      case FloatingEditTextPadding.PaddingTB16:
+      case FloatingEditTextPadding.paddingTB16:
         return getPadding(
           left: 9,
           top: 9,
@@ -202,20 +202,20 @@ class CustomFloatingEditText extends StatelessWidget {
 }
 
 enum FloatingEditTextShape {
-  RoundedBorder4,
+  roundedBorder4,
 }
 
 enum FloatingEditTextPadding {
-  PaddingTB13,
-  PaddingTB16,
+  paddingTB13,
+  paddingTB16,
 }
 
 enum FloatingEditTextVariant {
-  None,
-  FillGray30059,
+  none,
+  fillGray30059,
 }
 
 enum FloatingEditTextFontStyle {
-  SFProDisplayRegular16,
-  SFProDisplayBold14,
+  sFProDisplayRegular16,
+  sFProDisplayBold14,
 }

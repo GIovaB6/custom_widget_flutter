@@ -1,4 +1,4 @@
-// ignore_for_file: must_be_immutable
+// ignore_for_file: must_be_immutable, deprecated_member_use
 
 import 'dart:io';
 
@@ -32,7 +32,8 @@ class CustomImageView extends StatelessWidget {
 
   ///a [CustomImageView] it can be used for showing any type of images
   /// it will shows the placeholder image if image is not found on network image
-  CustomImageView({super.key, 
+  CustomImageView({
+    super.key,
     this.url,
     this.imagePath,
     this.svgPath,

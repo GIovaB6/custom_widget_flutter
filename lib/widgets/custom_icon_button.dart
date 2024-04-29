@@ -3,8 +3,9 @@ import 'package:basic_utils_flutter/app_export.dart';
 import 'package:flutter/material.dart';
 
 class CustomIconButton extends StatelessWidget {
-  CustomIconButton(
-      {super.key, this.shape,
+  const CustomIconButton(
+      {super.key,
+      this.shape,
       this.padding,
       this.variant,
       this.alignment,
@@ -14,23 +15,23 @@ class CustomIconButton extends StatelessWidget {
       this.child,
       this.onTap});
 
-  IconButtonShape? shape;
+  final IconButtonShape? shape;
 
-  IconButtonPadding? padding;
+  final IconButtonPadding? padding;
 
-  IconButtonVariant? variant;
+  final IconButtonVariant? variant;
 
-  Alignment? alignment;
+  final Alignment? alignment;
 
-  EdgeInsetsGeometry? margin;
+  final EdgeInsetsGeometry? margin;
 
-  double? width;
+  final double? width;
 
-  double? height;
+  final double? height;
 
-  Widget? child;
+  final Widget? child;
 
-  VoidCallback? onTap;
+  final VoidCallback? onTap;
 
   @override
   Widget build(BuildContext context) {
@@ -74,11 +75,11 @@ class CustomIconButton extends StatelessWidget {
 
   _setPadding() {
     switch (padding) {
-      case IconButtonPadding.PaddingAll18:
+      case IconButtonPadding.paddingAll18:
         return getPadding(
           all: 18,
         );
-      case IconButtonPadding.PaddingAll7:
+      case IconButtonPadding.paddingAll7:
         return getPadding(
           all: 7,
         );
@@ -91,21 +92,21 @@ class CustomIconButton extends StatelessWidget {
 
   _setColor() {
     switch (variant) {
-      case IconButtonVariant.FillTeal50001:
+      case IconButtonVariant.fillTeal50001:
         return ColorConstant.teal50001;
-      case IconButtonVariant.FillBlack90001:
+      case IconButtonVariant.fillBlack90001:
         return ColorConstant.black90001;
-      case IconButtonVariant.FillLightblue300:
+      case IconButtonVariant.fillLightblue300:
         return ColorConstant.lightBlue300;
-      case IconButtonVariant.FillGreen700:
+      case IconButtonVariant.fillGreen700:
         return ColorConstant.green700;
-      case IconButtonVariant.FillRedA200:
+      case IconButtonVariant.fillRedA200:
         return ColorConstant.redA200;
-      case IconButtonVariant.FillDeeppurple400:
+      case IconButtonVariant.fillDeeppurple400:
         return ColorConstant.deepPurple400;
-      case IconButtonVariant.FillBluegray40001:
+      case IconButtonVariant.fillBluegray40001:
         return ColorConstant.blueGray40001;
-      case IconButtonVariant.FillAmber300:
+      case IconButtonVariant.fillAmber300:
         return ColorConstant.amber300;
       default:
         return ColorConstant.gray300;
@@ -114,13 +115,13 @@ class CustomIconButton extends StatelessWidget {
 
   _setBorderRadius() {
     switch (shape) {
-      case IconButtonShape.RoundedBorder13:
+      case IconButtonShape.roundedBorder13:
         return BorderRadius.circular(
           getHorizontalSize(
             13.00,
           ),
         );
-      case IconButtonShape.RoundedBorder25:
+      case IconButtonShape.roundedBorder25:
         return BorderRadius.circular(
           getHorizontalSize(
             25.00,
@@ -137,25 +138,25 @@ class CustomIconButton extends StatelessWidget {
 }
 
 enum IconButtonShape {
-  RoundedBorder13,
-  RoundedBorder25,
-  RoundedBorder7,
+  roundedBorder13,
+  roundedBorder25,
+  roundedBorder7,
 }
 
 enum IconButtonPadding {
-  PaddingAll18,
-  PaddingAll7,
-  PaddingAll4,
+  paddingAll18,
+  paddingAll7,
+  paddingAll4,
 }
 
 enum IconButtonVariant {
-  FillGray300,
-  FillTeal50001,
-  FillBlack90001,
-  FillLightblue300,
-  FillGreen700,
-  FillRedA200,
-  FillDeeppurple400,
-  FillBluegray40001,
-  FillAmber300,
+  fillGray300,
+  fillTeal50001,
+  fillBlack90001,
+  fillLightblue300,
+  fillGreen700,
+  fillRedA200,
+  fillDeeppurple400,
+  fillBluegray40001,
+  fillAmber300,
 }
