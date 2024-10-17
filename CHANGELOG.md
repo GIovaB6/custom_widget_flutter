@@ -1,3 +1,7 @@
+## 0.0.7
+
+* Added readonly attr
+
 ## 0.0.6
 
 * Added optional title and fixed color

@@ -26,6 +26,7 @@ class CustomTextFormField extends StatelessWidget {
     this.validator,
     this.titleEnabled,
     this.title,
+    this.readOnly = false,
   });
 
   final TextFormFieldShape? shape;
@@ -69,7 +70,11 @@ class CustomTextFormField extends StatelessWidget {
   final FormFieldValidator<String>? validator;
 
   final bool? titleEnabled;
+
   final String? title;
+
+  final bool readOnly;
+
   @override
   Widget build(BuildContext context) {
     return alignment != null
@@ -99,6 +104,10 @@ class CustomTextFormField extends StatelessWidget {
                 width: width ?? double.maxFinite,
                 margin: margin,
                 child: TextFormField(
+                  onTapOutside: (event) {
+                    FocusScope.of(context).unfocus();
+                  },
+                  readOnly: readOnly,
                   controller: controller,
                   focusNode: focusNode,
                   autofocus: autofocus!,
@@ -117,6 +126,7 @@ class CustomTextFormField extends StatelessWidget {
             width: width ?? double.maxFinite,
             margin: margin,
             child: TextFormField(
+              readOnly: readOnly,
               controller: controller,
               focusNode: focusNode,
               autofocus: autofocus!,
