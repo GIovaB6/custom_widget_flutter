@@ -2,28 +2,31 @@ import 'package:basic_utils_flutter/app_export.dart';
 import 'package:flutter/material.dart';
 
 class CustomTextFormField extends StatelessWidget {
-  const CustomTextFormField(
-      {super.key,
-      this.shape,
-      this.padding,
-      this.variant,
-      this.fontStyle,
-      this.alignment,
-      this.width,
-      this.margin,
-      this.controller,
-      this.focusNode,
-      this.autofocus = false,
-      this.isObscureText = false,
-      this.textInputAction = TextInputAction.next,
-      this.textInputType = TextInputType.text,
-      this.maxLines,
-      this.hintText,
-      this.prefix,
-      this.prefixConstraints,
-      this.suffix,
-      this.suffixConstraints,
-      this.validator});
+  const CustomTextFormField({
+    super.key,
+    this.shape,
+    this.padding,
+    this.variant,
+    this.fontStyle,
+    this.alignment,
+    this.width,
+    this.margin,
+    this.controller,
+    this.focusNode,
+    this.autofocus = false,
+    this.isObscureText = false,
+    this.textInputAction = TextInputAction.next,
+    this.textInputType = TextInputType.text,
+    this.maxLines,
+    this.hintText,
+    this.prefix,
+    this.prefixConstraints,
+    this.suffix,
+    this.suffixConstraints,
+    this.validator,
+    this.titleEnabled,
+    this.title,
+  });
 
   final TextFormFieldShape? shape;
 
@@ -65,33 +68,67 @@ class CustomTextFormField extends StatelessWidget {
 
   final FormFieldValidator<String>? validator;
 
+  final bool? titleEnabled;
+  final String? title;
   @override
   Widget build(BuildContext context) {
     return alignment != null
         ? Align(
             alignment: alignment ?? Alignment.center,
-            child: _buildTextFormFieldWidget(),
+            child: _buildTextFormFieldWidget(context),
           )
-        : _buildTextFormFieldWidget();
+        : _buildTextFormFieldWidget(context);
   }
 
-  _buildTextFormFieldWidget() {
-    return Container(
-      width: width ?? double.maxFinite,
-      margin: margin,
-      child: TextFormField(
-        controller: controller,
-        focusNode: focusNode,
-        autofocus: autofocus!,
-        style: _setFontStyle(),
-        obscureText: isObscureText!,
-        textInputAction: textInputAction,
-        keyboardType: textInputType,
-        maxLines: maxLines ?? 1,
-        decoration: _buildDecoration(),
-        validator: validator,
-      ),
-    );
+  _buildTextFormFieldWidget(BuildContext context) {
+    return (titleEnabled != null && titleEnabled!)
+        ? Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Text(
+                title!,
+                style: Theme.of(context)
+                    .textTheme
+                    .bodySmall!
+                    .copyWith(fontWeight: FontWeight.bold),
+              ),
+              const SizedBox(
+                height: 8,
+              ),
+              Container(
+                width: width ?? double.maxFinite,
+                margin: margin,
+                child: TextFormField(
+                  controller: controller,
+                  focusNode: focusNode,
+                  autofocus: autofocus!,
+                  style: _setFontStyle(),
+                  obscureText: isObscureText!,
+                  textInputAction: textInputAction,
+                  keyboardType: textInputType,
+                  maxLines: maxLines ?? 1,
+                  decoration: _buildDecoration(),
+                  validator: validator,
+                ),
+              ),
+            ],
+          )
+        : Container(
+            width: width ?? double.maxFinite,
+            margin: margin,
+            child: TextFormField(
+              controller: controller,
+              focusNode: focusNode,
+              autofocus: autofocus!,
+              style: _setFontStyle(),
+              obscureText: isObscureText!,
+              textInputAction: textInputAction,
+              keyboardType: textInputType,
+              maxLines: maxLines ?? 1,
+              decoration: _buildDecoration(),
+              validator: validator,
+            ),
+          );
   }
 
   _buildDecoration() {
@@ -115,22 +152,12 @@ class CustomTextFormField extends StatelessWidget {
 
   _setFontStyle() {
     switch (fontStyle) {
-      case TextFormFieldFontStyle.sFProDisplayRegular17:
-        return TextStyle(
-          color: Colors.black,
-          fontSize: getFontSize(
-            17,
-          ),
-          fontFamily: 'SF Pro Display',
-          fontWeight: FontWeight.w400,
-        );
       default:
         return TextStyle(
-          color: Colors.grey,
+          color: const Color(0xFF0E150B),
           fontSize: getFontSize(
             16,
           ),
-          fontFamily: 'SF Pro Display',
           fontWeight: FontWeight.w400,
         );
     }
@@ -149,30 +176,21 @@ class CustomTextFormField extends StatelessWidget {
 
   _setBorderStyle() {
     switch (variant) {
-      case TextFormFieldVariant.outlineGray500:
-        return OutlineInputBorder(
-          borderRadius: _setOutlineBorderRadius(),
-          borderSide: BorderSide(
-            color: Colors.grey,
-            width: 1,
-          ),
-        );
-      case TextFormFieldVariant.none:
-        return InputBorder.none;
       default:
         return OutlineInputBorder(
           borderRadius: _setOutlineBorderRadius(),
-          borderSide: BorderSide.none,
+          borderSide: const BorderSide(
+            color: Color(0xFF0E150B),
+            width: 1,
+          ),
         );
     }
   }
 
   _setFillColor() {
     switch (variant) {
-      case TextFormFieldVariant.outlineGray500:
-        return Colors.white;
       default:
-        return Colors.grey;
+        return Colors.white;
     }
   }
 

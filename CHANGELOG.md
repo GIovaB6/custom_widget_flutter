@@ -1,3 +1,7 @@
+## 0.0.6
+
+* Added optional title and fixed color
+
 ## 0.0.5
 
 * Removed old ColorConstant
