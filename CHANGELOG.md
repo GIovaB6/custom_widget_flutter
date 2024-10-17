@@ -1,3 +1,7 @@
+## 0.0.5
+
+* Removed old ColorConstant
+
 ## 0.0.4
 
 * Constructor const and refactor camelaCase

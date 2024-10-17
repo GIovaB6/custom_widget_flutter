@@ -117,7 +117,7 @@ class CustomTextFormField extends StatelessWidget {
     switch (fontStyle) {
       case TextFormFieldFontStyle.sFProDisplayRegular17:
         return TextStyle(
-          color: ColorConstant.black90066,
+          color: Colors.black,
           fontSize: getFontSize(
             17,
           ),
@@ -126,7 +126,7 @@ class CustomTextFormField extends StatelessWidget {
         );
       default:
         return TextStyle(
-          color: ColorConstant.blueGray500,
+          color: Colors.grey,
           fontSize: getFontSize(
             16,
           ),
@@ -153,7 +153,7 @@ class CustomTextFormField extends StatelessWidget {
         return OutlineInputBorder(
           borderRadius: _setOutlineBorderRadius(),
           borderSide: BorderSide(
-            color: ColorConstant.gray500,
+            color: Colors.grey,
             width: 1,
           ),
         );
@@ -170,9 +170,9 @@ class CustomTextFormField extends StatelessWidget {
   _setFillColor() {
     switch (variant) {
       case TextFormFieldVariant.outlineGray500:
-        return ColorConstant.whiteA700;
+        return Colors.white;
       default:
-        return ColorConstant.gray30059;
+        return Colors.grey;
     }
   }
 
