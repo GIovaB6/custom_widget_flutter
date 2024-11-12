@@ -28,3 +28,13 @@ migrate_working_dir/
 .dart_tool/
 .packages
 build/
+example/windows/flutter/generated_plugins.cmake
+example/windows/flutter/generated_plugin_registrant.h
+example/windows/flutter/generated_plugin_registrant.cc
+example/macos/Flutter/GeneratedPluginRegistrant.swift
+example/linux/flutter/generated_plugins.cmake
+example/linux/flutter/generated_plugin_registrant.h
+example/linux/flutter/generated_plugin_registrant.cc
+example/pubspec.lock
+.flutter-plugins-dependencies
+.flutter-plugins
