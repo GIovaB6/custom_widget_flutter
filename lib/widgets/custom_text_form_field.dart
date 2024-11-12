@@ -85,6 +85,19 @@ class CustomTextFormField extends StatelessWidget {
         : _buildTextFormFieldWidget(context);
   }
 
+  /// [isValid] Check if value of the field is valid using validator or text.isNotEmpty
+  bool isValid() {
+    if (validator != null) {
+      if (validator?.call(controller?.text) == null) {
+        return true;
+      } else {
+        return false;
+      }
+    } else {
+      return controller?.text.isNotEmpty ?? false;
+    }
+  }
+
   _buildTextFormFieldWidget(BuildContext context) {
     return (titleEnabled != null && titleEnabled!)
         ? Column(
