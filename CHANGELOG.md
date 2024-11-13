@@ -1,3 +1,7 @@
+## 0.0.8
+
+* Added isValid function in CustomTextFormField
+
 ## 0.0.7
 
 * Added readonly attr
